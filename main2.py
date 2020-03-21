@@ -2,7 +2,7 @@ import os
 import sys
 import django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 django.setup()
 
 from datacenter.models import Passcard, Visit
@@ -11,6 +11,6 @@ from datacenter.models import Passcard, Visit
 if __name__ == "__main__":
     # Программируем здесь
     
-    print('Количество пропусков:', Passcard.objects.count())
-    print('Активных пропусков:', Passcard.objects.filter(is_active=True).count())
+    # print('Количество пропусков:', Passcard.objects.count())
+    print(Visit.objects.filter(leaved_at=None).all())
 
