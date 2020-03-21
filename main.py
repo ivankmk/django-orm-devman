@@ -9,5 +9,10 @@ from datacenter.models import Passcard, Visit
 
 
 if __name__ == "__main__":
-    # Программируем здесь
-    print('Количество пропусков:', Passcard.objects.count())
+    passcards = Passcard.objects.all()
+    passcard = passcards[2]
+
+    print({'owner_name':  passcard.owner_name,
+           'passcode': passcard.passcode,
+           'created_at': passcard.created_at,
+           'is_active': passcard.is_active})
